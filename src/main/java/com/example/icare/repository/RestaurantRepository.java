@@ -10,5 +10,5 @@ import java.util.Optional;
 @Repository
 @Transactional(readOnly = true)
 public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
-    Optional<User> findByEmail(String email);
+   
 }
