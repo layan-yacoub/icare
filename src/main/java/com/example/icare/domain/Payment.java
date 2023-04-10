@@ -18,8 +18,10 @@ import java.util.Objects;
    private Long payment_id; //primary key
    private Timestamp payment_date;
    private double payment_amount;
-   private int appointment_id;  //foreign key with appointment table
-
+  
+   @OneToOne
+   @JoinColumn(name = "appointment_id")
+   private Appointment appointment;
 
    /*@ManyToOne(fetch = FetchType.LAZY)// Many-to-one relationship with nutritionist the related entity will not be loaded from the database until it is actually accessed.
    @JoinColumn(name = "nutritionist_id")
