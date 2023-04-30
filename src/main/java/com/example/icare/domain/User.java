@@ -1,6 +1,8 @@
 package com.example.icare.domain;
 import jakarta.persistence.*;
 import lombok.*;
+import java.time.LocalDate;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,7 @@ public class User  {
     @Column(nullable = false)
     private String phone_number;
     private boolean emailVerified;
+   
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)    // Relationships with Report entity
     private List<Report> reports = new ArrayList<>();
@@ -33,15 +36,12 @@ public class User  {
         this.password = password;
         this.phone_number = phone_number;
         this.role = role;
+       
     }
     public User(String email) {
         this.email = email;
     } // email is a foreign key
     public boolean isEmailVerified() {
         return emailVerified;
-    }
-
-
-
-
+    }   
 }

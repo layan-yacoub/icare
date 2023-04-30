@@ -63,6 +63,14 @@ public class Patient {
         /*this.patient_id = "P" + super.getUser_id(); */
     }
 
+     public List<Nutritionist> getNutritionCenters() {
+       return nutritionCenters;
+   }
+
+   public void setNutritionCenters(List<Nutritionist> nutritionCenters) {
+       this.nutritionCenters = nutritionCenters;
+   }
+
 
 
 }

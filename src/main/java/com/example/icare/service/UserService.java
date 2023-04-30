@@ -68,4 +68,29 @@ public class UserService  {
     }
 
 
+    @Autowired
+  
+
+    @Autowired
+    private AdminService adminService;
+
+    public User saveUser(User user) {
+        return userRepository.save(user);
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public boolean isAdminAuthenticated(String username, String password) {
+        return adminService.authenticateAdmin(username, password);
+    }
+
+     @Autowired
+    
+
+    public User saveUser(String firstName, String lastName, LocalDate birthDate) {
+        User user = new User(firstName, lastName, birthDate);
+        return userRepository.save(user);
+    }
 }

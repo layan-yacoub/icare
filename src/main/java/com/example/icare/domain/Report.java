@@ -26,5 +26,9 @@ public class Report {
     private User user;
 
 
+
+    
+
+
 }
 

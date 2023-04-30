@@ -25,4 +25,24 @@ public class PatientService {
         return patientRepository.findById(patiant_id).orElse(null);
     }
 
+ 
+   @Autowired
+   private NutritionistRepository nutritionistRepository;
+
+   public List<Nutritionist> getNutritionCenters() {
+       return nutritionistRepository.findAll();}
+
+   public int getPatientAge(Long patientId) {
+        Patient patient = patientRepository.findById(patientId).orElse(null);
+        if (patient == null) {
+            throw new IllegalArgumentException("Patient not found");
+        }
+        LocalDate dob = patient.getDateOfBirth();
+        if (dob == null) {
+            throw new IllegalArgumentException("Patient date of birth not found");}
+        return Period.between(dob, LocalDate.now()).getYears();
+    }
 }
+
+
+
