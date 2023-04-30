@@ -19,6 +19,9 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long message_id ;
     private String message_text ;
+    private LocalDateTime sentAt;
+    private boolean hasAttachment;
+    private String attachmentName;
     @Lob
     private byte[] attachment;
     private Timestamp message_date;
@@ -34,5 +37,5 @@ public class Message {
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
-
+  
 }

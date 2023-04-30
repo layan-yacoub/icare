@@ -30,4 +30,9 @@ public class NutritionistService {
     public void deleteNutritionistById(Long nutritionist_id) {
         nutritionistRepository.deleteById(nutritionist_id);
     }
+ public interface NutritionistService {
+    
+    List<NutritionCenterDto> getAllNutritionCenters();
+    
+}
 }

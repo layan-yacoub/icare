@@ -13,4 +13,18 @@ public class ReportController {
     public ReportController(ReportService reportService) {
         this.reportService = reportService;
     }
+
+
+
+  
+    @Autowired
+    
+ 
+    @PostMapping
+    public ResponseEntity<Report> saveReport(@RequestBody Report report) {
+        Report savedReport = reportService.saveReport(report);
+        return ResponseEntity.ok(savedReport);
+    }
 }
+
+
